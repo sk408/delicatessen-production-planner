@@ -12,7 +12,7 @@ import type {
   ItemConfig,
   GlobalSettings,
   Holiday
-} from '@types/index';
+} from '../types/index';
 
 /**
  * Production Plan Generator
@@ -408,3 +408,5 @@ export class PlanGenerator {
     this.forecaster.setDayOfWeekFactors(factors);
   }
 }
+
+

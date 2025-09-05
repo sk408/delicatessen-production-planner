@@ -4,7 +4,7 @@ import {
   Cog6ToothIcon,
   QuestionMarkCircleIcon 
 } from '@heroicons/react/24/outline';
-import { useErrors, useDataSummary } from '@/store/app-store';
+import { useErrors, useDataSummary } from '../../store/app-store';
 
 interface HeaderProps {
   sidebarOpen: boolean;
@@ -112,3 +112,5 @@ export function Header({ sidebarOpen, setSidebarOpen }: HeaderProps) {
     </header>
   );
 }
+
+

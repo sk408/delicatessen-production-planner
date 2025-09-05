@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { useDropzone } from 'react-dropzone';
+// import { useDropzone } from 'react-dropzone';
 import { useNavigate } from 'react-router-dom';
 import { 
   CloudArrowUpIcon, 
@@ -9,12 +9,12 @@ import {
   XMarkIcon 
 } from '@heroicons/react/24/outline';
 import { clsx } from 'clsx';
-import { useAppStore } from '@/store/app-store';
-import { useNotifications } from '@components/common/NotificationProvider';
-import { LoadingSpinner } from '@components/common/LoadingSpinner';
-import { CsvProcessor } from '@lib/csv-parser';
-import { formatFileSize } from '@utils/format-helpers';
-import type { UploadedFile } from '@types/index';
+import { useAppStore } from '../../store/app-store';
+import { useNotifications } from '../common/NotificationProvider';
+import { LoadingSpinner } from '../common/LoadingSpinner';
+import { CsvProcessor } from '../../lib/csv-parser';
+import { formatFileSize } from '../../utils/format-helpers';
+import type { UploadedFile } from '../../types/index';
 
 export function DataUploadPage() {
   const navigate = useNavigate();
@@ -102,14 +102,13 @@ export function DataUploadPage() {
     }
   }, [addUploadedFile, updateUploadedFile, addProcessedData, setDataStatus, showSuccess, showError]);
 
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({
-    onDrop,
-    accept: {
-      'text/csv': ['.csv']
-    },
-    multiple: true,
-    disabled: isProcessing
-  });
+  // Simplified file input without react-dropzone for now
+  const handleFileInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const files = Array.from(event.target.files || []);
+    if (files.length > 0) {
+      onDrop(files);
+    }
+  };
 
   const handleRemoveFile = (fileId: string) => {
     removeUploadedFile(fileId);
@@ -139,18 +138,17 @@ export function DataUploadPage() {
       </div>
 
       {/* Upload area */}
-      <div className="bg-white rounded-lg shadow-soft p-6">
-        <div
-          {...getRootProps()}
-          className={clsx(
-            'border-2 border-dashed rounded-lg p-12 text-center transition-colors cursor-pointer',
-            isDragActive 
-              ? 'border-primary-500 bg-primary-50' 
-              : 'border-gray-300 hover:border-gray-400',
-            isProcessing && 'pointer-events-none opacity-50'
-          )}
-        >
-          <input {...getInputProps()} />
+      <div className="bg-white rounded-lg shadow-lg p-6">
+        <div className="border-2 border-dashed border-gray-300 rounded-lg p-12 text-center transition-colors hover:border-gray-400">
+          <input 
+            type="file" 
+            multiple 
+            accept=".csv" 
+            onChange={handleFileInput}
+            disabled={isProcessing}
+            className="hidden"
+            id="file-upload"
+          />
           
           {isProcessing ? (
             <LoadingSpinner size="large" message="Processing files..." />
@@ -158,17 +156,20 @@ export function DataUploadPage() {
             <>
               <CloudArrowUpIcon className="mx-auto h-16 w-16 text-gray-400 mb-4" />
               <h3 className="text-lg font-medium text-gray-900 mb-2">
-                {isDragActive ? 'Drop CSV files here...' : 'Upload CSV Files'}
+                Upload CSV Files
               </h3>
               <p className="text-gray-600 mb-4">
-                Drag and drop your CSV files here, or click to select files
+                Select your CSV files to begin processing
               </p>
               <p className="text-sm text-gray-500">
                 Supports multiple files for multi-year analysis
               </p>
-              <button className="mt-4 btn-primary">
+              <label 
+                htmlFor="file-upload" 
+                className="mt-4 inline-flex items-center px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 cursor-pointer"
+              >
                 Select Files
-              </button>
+              </label>
             </>
           )}
         </div>
@@ -292,3 +293,5 @@ export function DataUploadPage() {
     </div>
   );
 }
+
+

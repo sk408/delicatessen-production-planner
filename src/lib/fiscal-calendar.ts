@@ -1,5 +1,5 @@
 import { addDays, startOfDay } from 'date-fns';
-import type { FiscalDate } from '@types/index';
+import type { FiscalDate } from '../types/index';
 
 /**
  * Fiscal Calendar conversion utilities
@@ -209,3 +209,5 @@ export class FiscalCalendar {
     );
   }
 }
+
+

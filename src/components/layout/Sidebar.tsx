@@ -8,7 +8,7 @@ import {
   DocumentChartBarIcon,
   XMarkIcon
 } from '@heroicons/react/24/outline';
-import { useActiveStep, useCanProceedToPlanning } from '@/store/app-store';
+import { useActiveStep, useCanProceedToPlanning } from '../../store/app-store';
 
 interface SidebarProps {
   open: boolean;
@@ -178,3 +178,5 @@ export function Sidebar({ open, onClose }: SidebarProps) {
     </>
   );
 }
+
+

@@ -1,6 +1,6 @@
 import Papa from 'papaparse';
 import { FiscalCalendar } from './fiscal-calendar';
-import { parseItemString, formatItemNumber } from '@utils/format-helpers';
+import { parseItemString, formatItemNumber } from '../utils/format-helpers';
 import type { 
   RawSalesData, 
   ProcessedSalesData, 
@@ -9,7 +9,7 @@ import type {
   FileMetadata,
   DataQualityReport,
   DataQualityIssue
-} from '@types/index';
+} from '../types/index';
 
 /**
  * CSV Parser and Validator for sales data
@@ -462,3 +462,5 @@ export class CsvProcessor {
     };
   }
 }
+
+

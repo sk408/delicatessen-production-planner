@@ -4,7 +4,7 @@ import { Header } from './Header';
 import { Sidebar } from './Sidebar';
 import { Breadcrumbs } from './Breadcrumbs';
 import { ProgressSteps } from './ProgressSteps';
-import { useActiveStep } from '@/store/app-store';
+import { useActiveStep } from '../../store/app-store';
 
 export function AppLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -42,3 +42,5 @@ export function AppLayout() {
     </div>
   );
 }
+
+

@@ -12,7 +12,7 @@ import type {
   AppError,
   UIState,
   Notification
-} from '@types/index';
+} from '../types/index';
 
 interface AppStore extends AppState {
   // Actions
@@ -341,3 +341,5 @@ export const useDataSummary = () => useAppStore((state) => {
     filesUploaded: state.uploadedFiles.length
   };
 });
+
+

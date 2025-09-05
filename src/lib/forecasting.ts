@@ -1,5 +1,5 @@
 import { HolidayEngine } from './holiday-engine';
-import { getDayOfWeek, getMonthName } from '@utils/date-helpers';
+import { getDayOfWeek, getMonthName } from '../utils/date-helpers';
 import type { 
   ProcessedSalesData, 
   ForecastResult, 
@@ -7,7 +7,7 @@ import type {
   DailyForecast,
   ForecastFactors,
   Holiday
-} from '@types/index';
+} from '../types/index';
 
 /**
  * Advanced demand forecasting with intelligent date-based adjustments
@@ -460,3 +460,5 @@ export interface ForecastResult {
   dataPoints: number;
   targetDate: Date;
 }
+
+

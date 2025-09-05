@@ -6,7 +6,7 @@ import {
   DocumentTextIcon,
   ArrowRightIcon 
 } from '@heroicons/react/24/outline';
-import { useDataSummary, useAppStore } from '@/store/app-store';
+import { useDataSummary, useAppStore } from '../../store/app-store';
 
 export function HomePage() {
   const dataSummary = useDataSummary();
@@ -174,3 +174,5 @@ export function HomePage() {
     </div>
   );
 }
+
+

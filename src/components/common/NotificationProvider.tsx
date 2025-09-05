@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useCallback } from 'react';
-import { useAppStore } from '@/store/app-store';
+import { useAppStore } from '../../store/app-store';
 import { Toast } from './Toast';
-import type { AppError } from '@types/index';
+import type { AppError } from '../../types/index';
 
 interface NotificationContextType {
   showSuccess: (message: string, title?: string) => void;
@@ -85,3 +85,5 @@ export function NotificationProvider({ children }: { children: React.ReactNode }
     </NotificationContext.Provider>
   );
 }
+
+

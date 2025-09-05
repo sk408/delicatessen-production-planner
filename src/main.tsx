@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
 import { App } from './App';
 import './index.css';
 
@@ -18,9 +17,7 @@ window.addEventListener('unhandledrejection', (event) => {
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <BrowserRouter basename="/delicatessen-production-planner">
-      <App />
-    </BrowserRouter>
+    <App />
   </React.StrictMode>
 );
 
@@ -29,3 +26,5 @@ window.addEventListener('load', () => {
   const loadTime = performance.now() - startTime;
   console.log(`Application loaded in ${loadTime.toFixed(2)}ms`);
 });
+
+

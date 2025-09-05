@@ -3,7 +3,7 @@ import type {
   ItemConfig, 
   BatchDecision, 
   BatchOption 
-} from '@types/index';
+} from '../types/index';
 
 /**
  * Batch Size Optimization Engine
@@ -391,3 +391,5 @@ export class BatchOptimizer {
     return suggestions.length > 0 ? suggestions : ['Batch sizing appears optimal based on current data'];
   }
 }
+
+

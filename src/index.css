@@ -70,6 +70,15 @@
     @apply block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm resize-vertical;
   }
 
+  /* Shadow utilities */
+  .shadow-soft {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  }
+
+  .shadow-large {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+
   /* Card styles */
   .card {
     @apply bg-white overflow-hidden shadow-soft rounded-lg;
@@ -383,3 +392,5 @@
 .skip-link {
   @apply absolute left-0 top-0 bg-primary-600 text-white px-4 py-2 text-sm font-medium transform -translate-y-full focus:translate-y-0 transition-transform z-50;
 }
+
+

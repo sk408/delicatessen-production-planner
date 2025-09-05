@@ -1,5 +1,5 @@
 import { addDays, format, getDay } from 'date-fns';
-import type { Holiday, HolidayInstance, HolidayImpact } from '@types/index';
+import type { Holiday, HolidayInstance, HolidayImpact } from '../types/index';
 
 /**
  * Holiday Detection and Impact Analysis Engine
@@ -480,3 +480,5 @@ export class HolidayEngine {
     return errors;
   }
 }
+
+

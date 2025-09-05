@@ -137,3 +137,5 @@ export function CompactProgressSteps({ currentStep, className }: ProgressStepsPr
     </div>
   );
 }
+
+

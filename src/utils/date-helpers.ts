@@ -82,3 +82,5 @@ export const isFuture = (date: Date): boolean => {
 export const isPast = (date: Date): boolean => {
   return date < startOfDay(new Date());
 };
+
+
